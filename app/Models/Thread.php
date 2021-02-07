@@ -2,9 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Thread
+ * @property string $title
+ * @property string $body
+ * @property Collection $comments
+ *
+ * @package App\Models
+ */
 class Thread extends Model
 {
     use HasFactory;
@@ -36,4 +45,14 @@ class Thread extends Model
     protected $appends = [
         //
     ];
+
+    /**
+     * Linked Comments
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
