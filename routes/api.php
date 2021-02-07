@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\ThreadController;
+use App\Http\Controllers\Api\V1\Thread\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ use App\Http\Controllers\Api\V1\ThreadController;
 
 Route::apiResource('v1/threads', ThreadController::class);
 
+Route::apiResource('v1/threads/{thread}/comments', CommentController::class);
