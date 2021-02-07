@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\ThreadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,5 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 });*/
 
-Route::apiResource('v1/threads', \App\Http\Controllers\Api\V1\ThreadController::class);
+Route::apiResource('v1/threads', ThreadController::class);
+
